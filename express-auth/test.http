@@ -1,0 +1,46 @@
+@url = http://localhost:3001/api
+
+@json=Content-Type: application/json
+
+###
+GET {{url}}
+
+###
+POST {{url}}/register
+{{json}}
+
+{
+  "username":"user1",
+  "password":"123456"
+}
+
+###
+POST {{url}}/register
+{{json}}
+
+{
+  "username":"user2",
+  "password":"123456"
+}
+              
+###
+POST {{url}}/register
+{{json}}
+
+{
+  "username":"user3",
+  "password":"123456"
+}
+              
+###
+POST {{url}}/login
+{{json}}
+
+{
+  "username":"user3",
+  "password":"123456"
+}
+
+### 个人信息 bearer后面跟的是token，完成授权操作
+GET {{url}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkY2NmNzI3N2NiZDVkYTc5OGEzNDE2MSIsImlhdCI6MTU3MzcxNTMzMH0.WbWO_A0mEA7Viryk5a8T86uoIhDXV1TyEus4U5usJxU

@@ -1,0 +1,30 @@
+
+@url=http://localhost:3000/
+
+###
+
+GET {{url}}products
+###
+GET products/5dcb5dd2ef24db0bf042d69b
+
+###
+POST {{url}}products
+Content-Type: application/json
+
+{
+  "title":"product d"
+}
+
+###
+PUT {{url}}products/5dcb5dd2ef24db0bf042d69b
+Content-Type: application/json
+
+{
+  "title":"product E"
+}
+
+###
+DELETE {{url}}products/5dcb5dd2ef24db0bf042d69b
+
+###
+DELETE {{url}}products/5dcb8f45bae84867bc533c76
